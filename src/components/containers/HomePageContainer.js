@@ -4,15 +4,13 @@ import { connect } from "react-redux";
 import { HomePageView } from "../views";
 
 class HomePageContainer extends Component {
-    componentDidMount() {
-        // do something
-    }
+  componentDidMount() {
+    // do something
+  }
 
-    render() {
-        return (
-            <HomePageView />
-        );
-    }
+  render() {
+    return <HomePageView />;
+  }
 }
 
 export default HomePageContainer;
