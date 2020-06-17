@@ -13,8 +13,9 @@ class MenuPageContainer extends Component {
   render() {
     return (
       <>
-        <Hero hero="menuHero" />
-        <MenuPageView />
+        <Hero hero="menuHero">
+          <MenuPageView />
+        </Hero>
       </>
     );
   }

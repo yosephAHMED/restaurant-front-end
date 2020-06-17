@@ -4,6 +4,7 @@ import {
   HomePageContainer,
   MenuPageContainer,
   FoodPageContainer,
+  ErrorPageContainer,
 } from "../containers";
 
 const RoutesView = () => {
@@ -15,6 +16,8 @@ const RoutesView = () => {
             <Route exact path="/menu" component={MenuPageContainer} />
             {/**Setting up the food page route */}
             <Route exact path="/menu/:id" component={FoodPageContainer} />
+            {/**Setting up the error page route */}
+            <Route component={ErrorPageContainer} />
         </Switch>
     );
 };
