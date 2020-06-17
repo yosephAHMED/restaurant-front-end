@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HomePageView } from "../views";
+import { Hero } from "../";
 
 class HomePageContainer extends Component {
   componentDidMount() {
@@ -9,7 +10,12 @@ class HomePageContainer extends Component {
   }
 
   render() {
-    return <HomePageView />;
+    return (
+      <>
+        <Hero />
+        <HomePageView />
+      </>
+    );
   }
 }
 

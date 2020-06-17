@@ -140,3 +140,21 @@ h6 {
 }
 
 /* end of globals */
+
+/* Hero */
+
+.defaultHero,
+.menuHero {
+  min-height: calc(100vh - 66px);
+  background: url("../images/banner_home.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuHero {
+  background-image: url("../images/banner_menu.jpg");
+  min-height: 75vh;
+}
+
+/* End of Hero */

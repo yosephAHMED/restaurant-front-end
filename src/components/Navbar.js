@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../views/styles/NavBarView.css";
+import "./views/styles/Navbar.css";
 import { Link } from "react-router-dom";
-import logo from "../../images/Logo.png";
+import logo from "../images/Logo.png";
 import { FiAlignCenter } from "react-icons/fi";
 
 class Navbar extends Component {
