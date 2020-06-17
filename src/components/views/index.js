@@ -2,4 +2,3 @@
 export { default as HomePageView } from "./HomePageView";
 export { default as MenuPageView } from "./MenuPageView";
 export { default as FoodPageView } from "./FoodPageView";
-export { default as NavBarView } from "./NavBarView";
