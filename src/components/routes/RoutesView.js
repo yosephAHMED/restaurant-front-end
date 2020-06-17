@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import {
   HomePageContainer,
   MenuPageContainer,
+  FoodPageContainer,
 } from "../containers";
 
 const RoutesView = () => {
@@ -12,6 +13,8 @@ const RoutesView = () => {
             <Route exact path="/" component={HomePageContainer} />
             {/**Setting up the menu page route */}
             <Route exact path="/menu" component={MenuPageContainer} />
+            {/**Setting up the food page route */}
+            <Route exact path="/menu/:id" component={FoodPageContainer} />
         </Switch>
     );
 };
