@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HomePageView } from "../views";
-import { Hero, Banner } from "../";
+import { Hero, Banner} from "../";
 
 class HomePageContainer extends Component {
   componentDidMount() {
