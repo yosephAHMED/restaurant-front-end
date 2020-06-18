@@ -207,10 +207,6 @@ h6 {
 }
 /* End of Banner */
 
-.black-bg {
-  
-}
-
 /* Title */
 
 .section-title {
@@ -292,12 +288,59 @@ h6 {
 }
 
 .about_us {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  min-height: calc(100vh);
+  background: url("../images/restaurant_home.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_us_content {
+  background-color: black;
+  margin-left: 10px;
+  color: white;
   width: 60%;
   float: left;
+  padding: 10px;
+  font-family: "Lucida Console", Courier, monospace;
+}
+
+.about_us_content div {
+  width: 10rem;
+  height: 2px;
+  background: var(--primaryColor);
+  margin: 1.7rem auto;
+}
+
+.about_us_content p a {
+  text-decoration: none;
+  color: #f1a944;
+}
+
+.about_us_content p a:hover {
+  color: yellow;
 }
 
 .about_us_picture {
   width: 40%;
   float: right;
+}
+
+.circle-icon {
+  background:#f1a944;
+  width: 50px;
+  height: 50px;
+  border-radius: 12%;
+  text-align: center;
+  line-height: 100px;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.circle-icon:hover {
+  color: yellow;
 }
 /*end of services */
