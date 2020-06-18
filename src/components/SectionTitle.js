@@ -6,7 +6,7 @@ export default function Title({ title, quote, subtitle, children }) {
       <h4>{title}</h4>
       <h6>{quote}</h6>
       <p>{subtitle}</p>
-      <p>{children}</p>
+      <h3>{children}</h3>
       <div />
     </div>
   );

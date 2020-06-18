@@ -215,6 +215,15 @@ h6 {
   margin-bottom: 4rem;
 }
 
+.section-title h3 a {
+  text-decoration: none;
+  color: #ff9602;
+}
+
+.section-title h3 a:hover {
+  color: rgb(211, 164, 9);
+}
+
 .section-title h4 {
   font-size: 2rem;
   letter-spacing: var(--mainSpacing);
