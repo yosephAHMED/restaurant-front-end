@@ -231,7 +231,7 @@ h6 {
 }
 
 .section-title div {
-  width: 5rem;
+  width: 44rem;
   height: 5px;
   margin: 0 auto;
   background: var(--primaryColor);
@@ -289,5 +289,15 @@ h6 {
   .services p {
     width: 100%;
   }
+}
+
+.about_us {
+  width: 50%;
+  float: left;
+}
+
+.about_us_picture {
+  width: 50%;
+  float: right;
 }
 /*end of services */
