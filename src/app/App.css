@@ -292,12 +292,12 @@ h6 {
 }
 
 .about_us {
-  width: 50%;
+  width: 60%;
   float: left;
 }
 
 .about_us_picture {
-  width: 50%;
+  width: 40%;
   float: right;
 }
 /*end of services */

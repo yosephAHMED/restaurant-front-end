@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { SectionTitle } from "./";
+import { SectionTitle } from ".";
 
-export default class Services extends Component {
+export default class About extends Component {
   render() {
     return (
       <>
