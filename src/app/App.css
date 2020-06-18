@@ -286,7 +286,9 @@ h6 {
     width: 100%;
   }
 }
+/* end of services */
 
+/* start of about */
 .about_us {
   text-align: center;
   margin-top: 2rem;
@@ -343,4 +345,10 @@ h6 {
 .circle-icon:hover {
   color: yellow;
 }
-/*end of services */
+/*end of about */
+
+/*start of reservations*/
+.black-bg-reservations {
+  background: black;
+  padding: 80px;
+}
