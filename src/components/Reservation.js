@@ -9,7 +9,8 @@ export default class Reservation extends Component {
         <SectionTitle 
             title="Troppe salse vivande false"
             quote='"Too much sauce means false food"'
-            children={<Link to="/menu">Menu</Link>}
+            subtitle="Inspired by Flavor and Dedicated to Sustainability"
+            children={<Link to="/menu">View Our Menu</Link>}
         />
         <section class="black-bg-reservations"></section>
       </>
