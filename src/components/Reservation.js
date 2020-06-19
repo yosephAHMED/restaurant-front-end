@@ -12,7 +12,7 @@ export default class Reservation extends Component {
             subtitle="Inspired by Flavor and Dedicated to Sustainability"
             children={<Link to="/menu">View Our Menu</Link>}
         />
-        <section className="black-bg-reservations">
+        <section className="reservation-bg">
           <div className="book-reservations-image">
             <div className="book-reservations-text">
               <h2>Book a Reservation</h2>

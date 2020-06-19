@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import RoutesContainer from "../components/routes/RoutesContainer";
-import {Navbar} from "../components";
+import { Navbar, Footer } from "../components";
 
 class App extends Component {
   constructor() {
@@ -16,6 +16,7 @@ class App extends Component {
         <header className="app-header">
           <RoutesContainer />
         </header>
+        <Footer />
       </>
     );
   }

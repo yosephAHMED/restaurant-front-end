@@ -357,8 +357,8 @@ h6 {
 /*end of about */
 
 /*start of reservations*/
-.black-bg-reservations {
-  background: black;
+.reservation-bg {
+  background:#e2dddd;
   padding: 80px 0;
   display: block;
   box-sizing: border-box;
@@ -376,14 +376,14 @@ h6 {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   padding-top: 17.62%;
-  height: 360px;
-  min-height: 175px;
+  height: 600px;
+  min-height: 300px;
 }
 
 .book-reservations-text {
   color: white;
   letter-spacing: 2px;
-  margin-top: -11%;
+  margin-top: -8%;
   position: relative;
   width: 340px;
   margin-right: auto;
@@ -413,4 +413,99 @@ h6 {
 
 .book-reservations-text a:hover {
   color: #e0dad2;
+}
+
+/* end of reservations */
+
+/* start of footer */
+
+.footer-bg {
+  background: url("../images/footer_panaroma.jpg") center/cover no-repeat;
+  padding: 0px 0 500px;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.6428;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-inner-box {
+  padding: 100px;
+}
+
+.footer-inner-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer-row {
+}
+
+.footer-mid {
+  width: 100%;
+  float: left;
+  min-height: 1px;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.footer-mid-box {
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.footer-mid-box div {
+  width: 10rem;
+  height: 2px;
+  background: white;
+  margin: 2rem auto;
+}
+
+.footer-list {
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 25px;
+  list-style: none;
+  background-color: #f1a944;
+  outline: 4px solid rgba(25,10,2,0.7);
+}
+
+.footer-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-item a:hover {
+  color: red;
+}
+
+.footer-list-restaurant-info {
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 25px;
+  list-style: none;
+  background-color: black;
+  outline: 4px solid white;
+  height: 300px;
+  width: 300px;
+}
+
+.footer-item-restaurant-info {
+  color: white;
+  list-style-type: none;
+  padding: 3px;
+}
+
+hr.w250 {
+  border-top: 1px solid aqua;
 }
