@@ -359,5 +359,58 @@ h6 {
 /*start of reservations*/
 .black-bg-reservations {
   background: black;
-  padding: 80px;
+  padding: 80px 0;
+  display: block;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.6428;
+  color: white;
+}
+
+.book-reservations-image {
+  background: url("../images/reservation_book_new.png");
+  background-position: center top;
+  background-size: cover;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding-top: 17.62%;
+  height: 360px;
+  min-height: 175px;
+}
+
+.book-reservations-text {
+  color: white;
+  letter-spacing: 2px;
+  margin-top: -11%;
+  position: relative;
+  width: 340px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.book-reservations-text h2 {
+  font-family: "Lusitana",Georgia,"Times New Roman",Times,serif;
+  font-weight: 500;
+  font-size: 34px;
+  background-color: black;
+}
+
+.book-reservations-text a {
+  display: block;
+  background: rgba(25,10,2,0.85);
+  width: 190px;
+  margin: 0 auto 10px auto;
+  color: #94826d;
+  outline: 4px solid rgba(25,10,2,0.7);
+  font-family: "Montserrat","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-decoration: none;
+  transition: all .5s;
+}
+
+.book-reservations-text a:hover {
+  color: #e0dad2;
 }
