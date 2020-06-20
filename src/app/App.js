@@ -16,7 +16,7 @@ class App extends Component {
         <header className="app-header">
           <RoutesContainer />
         </header>
-        <Footer />
+        {/* <Footer /> */}
       </>
     );
   }
