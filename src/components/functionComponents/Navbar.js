@@ -20,7 +20,7 @@ class Navbar extends Component {
         <div className="nav-center">
           <div className="nav_header">
             <Link to="/">
-              <img src='' alt="logo" class="logo" width="75%" height="75%" />
+              <img src='' alt="logo" className="logo" width="75%" height="75%" />
             </Link>
             <button
               type="button"

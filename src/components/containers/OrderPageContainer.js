@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { MenuPageView } from "../views";
-import { Hero, Banner } from "../";
+import { Hero, Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -17,7 +17,7 @@ class OrderPageContainer extends Component {
 
   componentDidMount() {
     let appetizers = "http://localhost:3001/menu/appetizer";
-    let entrees = "http://localhost:3001/menu/entrees";
+    let entrees = "http://localhost:3001/menu/entree";
     let dessert = "http://localhost:3001/menu/dessert";
     let drinks = "http://localhost:3001/menu/drinks";
 
