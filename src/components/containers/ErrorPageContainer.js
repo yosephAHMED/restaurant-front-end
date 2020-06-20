@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { ErrorPageView } from "../views";
-import { Hero } from "../";
+import { Hero } from "../functionComponents";
 
 class ErrorPageContainer extends Component {
   constructor() {
