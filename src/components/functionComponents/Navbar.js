@@ -37,6 +37,9 @@ class Navbar extends Component {
             <li>
               <Link to="/menu">Menu</Link>
             </li>
+            <li>
+              <Link to="/order">Order</Link>
+            </li>
           </ul>
         </div>
       </nav>
