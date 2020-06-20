@@ -5,8 +5,8 @@ import {
   MenuPageContainer,
   FoodPageContainer,
   ErrorPageContainer,
-  LoginPageContainer
-  OrderPageContainer,
+  LoginPageContainer,
+  OrderPageContainer
 } from "../containers";
 
 const RoutesView = () => {
