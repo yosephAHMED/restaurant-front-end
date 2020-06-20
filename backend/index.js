@@ -13,9 +13,24 @@ app.get('/menu', async (req,res) =>{
     let menuitems = await pool.query("Select * from menu");
     res.json(menuitems.rows);
 });
-app.get('/menuappetizer', async (req,res) =>{
+app.get('/menu/appetizer', async (req,res) =>{
     let val = 'appetizer'
     let menuitems = await pool.query(`Select * from menu where foodCategory='${val}'`);
+    res.json(menuitems.rows);
+});
+app.get('/menu/entree', async (req,res) =>{
+    let entree = 'entree'
+    let menuitems = await pool.query(`Select * from menu where foodCategory='${entree}'`);
+    res.json(menuitems.rows);
+});
+app.get('/menu/dessert', async (req,res) =>{
+    let dessert = 'dessert'
+    let menuitems = await pool.query(`Select * from menu where foodCategory='${dessert}'`);
+    res.json(menuitems.rows);
+});
+app.get('/menu/drinks', async (req,res) =>{
+    let drinks = 'drinks'
+    let menuitems = await pool.query(`Select * from menu where foodCategory='${drinks}'`);
     res.json(menuitems.rows);
 });
 app.get('/allorders', async (req,res) =>{
