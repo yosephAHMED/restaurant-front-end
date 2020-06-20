@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <>
-        <Navbar />
+        <Navbar/>
         <header className="app-header">
           <RoutesContainer />
         </header>

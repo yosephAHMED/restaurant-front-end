@@ -20,7 +20,7 @@ class Navbar extends Component {
         <div className="nav-center">
           <div className="nav_header">
             <Link to="/">
-              <img src='' alt="logo" class="logo" width="75%" height="75%" />
+              <img src='' alt="logo" className="logo" width="75%" height="75%" />
             </Link>
             <button
               type="button"
@@ -36,6 +36,9 @@ class Navbar extends Component {
             </li>
             <li>
               <Link to="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/order">Order</Link>
             </li>
           </ul>
         </div>
