@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner } from "../";
+import { Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 
 const ErrorPageView = (props) => {

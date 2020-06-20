@@ -13,6 +13,11 @@ app.get('/menu', async (req,res) =>{
     let menuitems = await pool.query("Select * from menu");
     res.json(menuitems.rows);
 });
+app.get('/menuappetizer', async (req,res) =>{
+    let val = 'appetizer'
+    let menuitems = await pool.query(`Select * from menu where foodCategory='${val}'`);
+    res.json(menuitems.rows);
+});
 app.get('/allorders', async (req,res) =>{
     let allOrders = await pool.query("Select * from orders");
     res.send(allOrders.rows);

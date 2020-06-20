@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { MenuPageView } from "../views";
-import { Hero, Banner } from "../";
+import { Hero, Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -25,11 +25,7 @@ class MenuPageContainer extends Component {
 
       console.log("ARRAY: " + this.state.fooditems);
 
-
     }).catch((err)=>{console.log("Error: " + err)})
-
-
-
   }
 
   render() {
