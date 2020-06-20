@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { SectionTitle } from ".";
+import { SectionTitle } from "../functionComponents";
 import { BsImages } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
