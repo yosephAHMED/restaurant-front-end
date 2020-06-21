@@ -517,3 +517,127 @@ h6 {
 hr.w250 {
   border-top: 1px solid aqua;
 }
+
+/* start of menu lhs */
+.menu-main-container-lhs {
+  background-attachment: fixed !important;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: 0;
+  text-shadow: none;
+  word-wrap: break-word;
+  outline: none;
+  font-family: "Open Sans",sans-serif;
+  width: 50%;
+  float: left;
+}
+
+.menu-section-container {
+  background-color:gray;
+  color: black;
+  line-height: normal;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 30px auto 30px auto;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.menu-section-container-name {
+  display: inline-block;
+  position: relative;
+  max-width: 80%;
+  word-wrap: break-word;
+  outline: none;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.menu-sub-section {
+  -moz-column-count: 2;
+  -moz-column-width: auto;
+  -moz-column-gap: 40px;
+  -moz-column-rule: none;
+  column-count: 2;
+  column-width: auto;
+  column-gap: 40px;
+  column-rule: none;
+  font: serif;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: 0;
+  text-shadow: none;
+  word-wrap: break-word;
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  color: black;
+}
+
+.menu-sub-section-item {
+  margin: 8px 0 8px 0;
+  display: inline-block;
+  zoom: 1;
+  width: 100%;
+  position: relative;
+}
+
+.menu-sub-section-item-name {
+  margin-right: 30px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-sub-section-item-price {
+  margin-left: 5px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+
+.menu-sub-section-item-description {
+  color: #4d4d4d;
+  clear: both;
+  font: serif;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: 0;
+  text-shadow: none;
+  word-wrap: break-word;
+  outline: none;
+}
+
+/* start of order rhs */
+.order-main-container-rhs {
+  background-attachment: fixed !important;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: 0;
+  text-shadow: none;
+  word-wrap: break-word;
+  outline: none;
+  font-family: "Open Sans",sans-serif;
+  width: 50%;
+  float: right;
+}
