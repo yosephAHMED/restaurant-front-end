@@ -36,11 +36,11 @@ class OrderPageContainer extends Component {
       const responseDessert = res[2];
       const responseDrinks = res[3];
 
-      console.log("data in res: ", res);
-      console.log("data in responseAppetizers: ", responseAppetizers);
-      console.log("data in responseEntrees: ", responseEntrees);
-      console.log("data in responseDessert: ", responseDessert);
-      console.log("data in responseDrinks: ", responseDrinks);
+      // console.log("data in res: ", res);
+      console.log("data in responseAppetizers: ", responseAppetizers.data);
+      // console.log("data in responseEntrees: ", responseEntrees);
+      // console.log("data in responseDessert: ", responseDessert);
+      // console.log("data in responseDrinks: ", responseDrinks);
 
       // do something with the data inside of responses
         // each response should be an array that contains an object for each food
@@ -49,13 +49,13 @@ class OrderPageContainer extends Component {
         // we would have an array containing arrays that contain objects
 
       this.setState({ 
-        appetizers: responseAppetizers,
-        entrees: responseEntrees,
-        dessert: responseDessert,
-        drinks: responseDrinks,
+        appetizersArr: responseAppetizers.data,
+        entreesArr: responseEntrees.data,
+        dessertArr: responseDessert.data,
+        drinksArr: responseDrinks.data,
       });
 
-      console.log("appetizers state: ", this.state.appetizers);
+      console.log("appetizers state: ", this.state.appetizersArr);
       console.log("entrees state: ", this.state.entrees);
       console.log("desserts state: ", this.state.desserts);
       console.log("drinks state: ", this.state.drinks);
@@ -67,10 +67,10 @@ class OrderPageContainer extends Component {
 
   render() {
     const { 
-      appetizers,
-      entrees,
-      desserts,
-      drinks, 
+      appetizersArr,
+      entreesArr,
+      dessertsArr,
+      drinksArrArr, 
     } = this.state;
     return (
       <>
@@ -84,13 +84,20 @@ class OrderPageContainer extends Component {
             </Link>
           </Banner>
         </Hero>
-
-        {/* {appetizers.data.map((value, k) => (
+        {console.log("appetizers in render: ", appetizersArr)}
+        {appetizersArr.map((value, k) => (
           <h4 key={k}>
             {" "}
             {value.fooditem}&nbsp;{value.fooddescription}&nbsp;{value.foodprice}
           </h4>
-        ))} */}
+        ))}
+
+        {entreesArr.map((value, k) => (
+          <h4 key={k}>
+            {" "}
+            {value.fooditem}&nbsp;{value.fooddescription}&nbsp;{value.foodprice}
+          </h4>
+        ))}
 
       </>
     );
