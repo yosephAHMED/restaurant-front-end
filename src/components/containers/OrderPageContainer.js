@@ -13,7 +13,7 @@ class OrderPageContainer extends Component {
       appetizersArr: [],
       entreesArr: [],
       dessertArr: [],
-      drinks: [],
+      drinksArr: [],
       order: [],
     };
   }
@@ -140,7 +140,7 @@ class OrderPageContainer extends Component {
             </div>
             <div className="menu-sub-section">
                  {/* PRINT OUT DESSERTS ARRAY */}
-                {dessertsArr.map((food, item) => (
+                {/* {dessertsArr.map((food, item) => (
                   <div className="menu-sub-section-item">
                     <div className="menu-sub-section-item-name">
                       {food.fooditem}
@@ -152,7 +152,7 @@ class OrderPageContainer extends Component {
                       {food.fooddescription}
                     </div>
                   </div>
-                ))}
+                ))} */}
                 {/* END OF DESSERTS ARRAY */}
             </div>
             {/* END OF DESSERTS SECTION */}
