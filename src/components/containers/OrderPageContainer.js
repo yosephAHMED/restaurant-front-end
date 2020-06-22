@@ -184,7 +184,16 @@ class OrderPageContainer extends Component {
 
           </div>
           {/* RHS for ORDER */}
-          <div className="order-main-container-rhs">test</div>
+          <div className="order-main-container-rhs">
+            <div className="order-main-container-rhs-center">
+              <div className="order-main-container-rhs-center-title">
+                ORDER
+              </div>
+              <div className="order-main-container-rhs-center-order-list">
+                test
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );

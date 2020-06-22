@@ -450,9 +450,6 @@ h6 {
   margin-left: auto;
 }
 
-.footer-row {
-}
-
 .footer-mid {
   width: 100%;
   float: left;
@@ -516,6 +513,10 @@ h6 {
 
 hr.w250 {
   border-top: 1px solid aqua;
+}
+
+.menu-order-container {
+  display: flex;
 }
 
 /* start of menu lhs */
@@ -626,18 +627,30 @@ hr.w250 {
 
 /* start of order rhs */
 .order-main-container-rhs {
-  background-attachment: fixed !important;
-  font-size: 13px;
-  font-weight: normal;
-  line-height: 18px;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  border: 0;
-  text-shadow: none;
-  word-wrap: break-word;
-  outline: none;
-  font-family: "Open Sans",sans-serif;
-  width: 50%;
+  width: 40%;
   float: right;
+  text-align: center;
+  margin: 100px auto 100px auto;
+}
+
+.order-main-container-rhs-center {
+  /**/
+}
+
+.order-main-container-rhs-center-title {
+  background: red;
+  padding: 8px;
+  font-family: "Open Sans",sans-serif;
+  font-size: 20px;
+  border: rgb(252, 195, 10);
+  border-style: solid;
+  border-width: 4px;
+}
+
+.order-main-container-rhs-center-order-list {
+  background-color: lightgrey;
+  padding: 85px;
+  border: rgb(252, 195, 10);
+  border-style: solid;
+  border-width: 4px;
 }
