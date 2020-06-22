@@ -6,7 +6,7 @@ export default function Display(props) {
         <div>
             {
                 (props.map).map((val,k)=>(
-                    <div>{val.orderid} &emsp; {val.username} &emsp; {val.price}</div>
+                    <div key={k}>{val.orderid} &emsp; {val.username} &emsp; {val.price}</div>
                 ))
             }        
         </div>
