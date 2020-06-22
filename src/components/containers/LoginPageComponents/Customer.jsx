@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {logStatus} from "/Users/GregoryRoss1/Desktop/TTP/restaurant-front-end/src/app/actions"
+import {logStatus} from "../../../app/actions";
 
 
 export default function Customer(props) {
