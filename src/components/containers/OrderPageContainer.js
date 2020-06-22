@@ -68,6 +68,10 @@ class OrderPageContainer extends Component {
       });
   }
 
+  handleClick = (foodid) => {
+    this.props.addToCart(foodid);
+  }
+
   render() {
     const { appetizersArr, entreesArr, dessertsArr, drinksArr } = this.state;
     return (
