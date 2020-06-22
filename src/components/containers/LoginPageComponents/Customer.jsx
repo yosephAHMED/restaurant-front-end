@@ -22,7 +22,7 @@ export default function Customer(props) {
                 <input type="text"/>
                 <input type="text"/>
                 <button onClick={dis}>Log In</button>
-                {logged ? <h1> logged </h1> : <h1> not logged </h1>}
+                {/* {logged ? <h1> logged </h1> : <h1> not logged </h1>} */}
             {/* </form> */}
         </div>
     )

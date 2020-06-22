@@ -4,17 +4,17 @@ import Pending from "./LoginPageComponents/Pending.jsx"
 import Completed from "./LoginPageComponents/Completed.jsx"
 import Customer from './LoginPageComponents/Customer.jsx';
 import {useSelector, useDispatch, connect} from 'react-redux';
-import { logStatus } from '../../app/actions/index.js';
+// import { logStatus } from '../../app/actions/index.js';
 
 
     
-
 class LoginPageContainer extends Component {
 
     constructor(props){
         super(props);
 
         this.state = {
+            log:'',
             arr: [],
             arr2: []
         }
@@ -29,7 +29,7 @@ class LoginPageContainer extends Component {
         this.getOrders();
     }
 
-    getOrders = () =>{
+    getOrders = () => {
 
         axios.get("http://localhost:3001/pendingorders").then((res) => {
             let temp = [];
@@ -47,27 +47,40 @@ class LoginPageContainer extends Component {
             this.setState({arr2: temp});
         }).catch((err)=>{console.log(err)})
 
+
     }
+
+    // reloadget = () =>{
+
+    //     this.setState({arr:[],arr2:[]},()=>{
+    //         this.getOrders();
+    //         console.log("Componetttt")
+    //     })
+
+    // }
 
     render() {
         const {arr, arr2} = this.state;
 
         return (
             <>  
-            {   !this.props.logged &&
-                <div>
-                <Customer login={this.login}/>
-                <button> Sign Up </button>
-                </div>
-            }
+            {   
+                !this.props.logged ?
 
-            {   this.props.logged &&
                 <div>
-                    <Pending title='Pending Orders' map={arr}/>
-                    <Completed title='Completed Orders' map={arr2}/>
+                    <Customer login={this.login}/>
+                    <button> Sign Up </button>
+                </div>
+            
+                :
+               
+                <div>
+                    <Pending title='Pending Orders' map={arr} getorder={this.getOrders}/>
+                    <Completed title='Completed Orders' map={arr2} getorder={this.getOrders}/>
                     <button onClick={() => this.props.logStatus}>Log Out</button>
                 </div>
             }
+
             </>
         )
     }
@@ -78,12 +91,12 @@ function mapStateToProps(state) {
     return {logged};
 }
 
-function mapDispatchToProps(dispatch){
-    return {
-      logStatus: () => dispatch(logStatus()),
-      dispatch
-    }
-  }
+// function mapDispatchToProps(dispatch){
+//     return {
+//       logStatus: () => dispatch(logStatus()),
+//       dispatch
+//     }
+//   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPageContainer);
+export default connect(mapStateToProps)(LoginPageContainer);
 // export default (LoginPageContainer);
