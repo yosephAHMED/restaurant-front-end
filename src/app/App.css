@@ -690,7 +690,7 @@ hr.w250 {
   column-gap: 40px;
   column-rule: none;
   font: serif;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: normal;
   line-height: 18px;
   margin: 0;
@@ -733,7 +733,7 @@ hr.w250 {
   color: #4d4d4d;
   clear: both;
   font: serif;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -742,6 +742,31 @@ hr.w250 {
   text-shadow: none;
   word-wrap: break-word;
   outline: none;
+}
+
+.add-to-cart-btn {
+  margin-left: 5px;
+  position: absolute;
+  right: 0px;
+  padding: 1px;
+  background-color: rgb(26, 168, 26);
+}
+
+.add-to-cart-btn:hover {
+  padding: 3px;
+  background-color: rgb(13, 212, 13);
+}
+
+.remove-from-cart-btn {
+  margin-left: 5px;
+  right: 0px;
+  padding: 1px;
+  background-color: rgb(255, 0, 0);
+}
+
+.remove-from-cart-btn:hover {
+  padding: 3px;
+  background-color: rgb(255, 100, 100);
 }
 
 /* start of order rhs */
@@ -753,23 +778,38 @@ hr.w250 {
 }
 
 .order-main-container-rhs-center {
-  background: red;
+  background:gray
 }
 
 .order-main-container-rhs-center-title {
-  background: red;
+  background: gray;
+  color:rgb(252, 195, 10); 
   padding: 8px;
   font-family: "Open Sans", sans-serif;
   font-size: 20px;
-  border: rgb(252, 195, 10);
+  border: black;
   border-style: solid;
-  border-width: 2px;
+  border-width: 6px;
 }
 
 .order-main-container-rhs-center-order-list {
   background-color: rgb(255, 255, 255);
-  padding: 85px;
-  border: rgb(252, 195, 10);
+  padding: 30px;
+  border: black;
   border-style: solid;
-  border-width: 4px;
+  border-width: 6px;
+}
+
+.order-submit-btn {
+  padding: 2px;
+  width: 30%;
+  background-color: rgb(252, 195, 10); 
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.order-submit-btn:hover {
+  background-color: rgba(255, 251, 0, 0.89);
+  padding: 5px; 
 }

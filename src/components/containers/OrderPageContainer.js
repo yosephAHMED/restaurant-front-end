@@ -153,7 +153,7 @@ class OrderPageContainer extends Component {
                 {/* <Cart /> */}
                 <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} remove={this.handleRemove}/>
               </div>
-              <button onClick={this.orderSubmit}> Submit </button>
+              <button className="order-submit-btn" onClick={this.orderSubmit}>Submit Order</button>
 
             </div>
           </div>
