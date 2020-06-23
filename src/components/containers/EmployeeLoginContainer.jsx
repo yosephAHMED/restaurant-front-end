@@ -52,7 +52,12 @@ export default class EmployeeLoginContainer extends Component {
         axios.get("http://localhost:3001/completedorders").then((res) => {
             let temp = [];
             (res.data).forEach(e => {
-                temp.push(e);
+                let tem = e;
+
+                tem.orderitems = JSON.parse(e.orderitems)
+                console.log("Push")
+                console.log(tem)
+                temp.push(tem);
             });
             this.setState({arr2: temp});
         }).catch((err)=>{console.log(err)})

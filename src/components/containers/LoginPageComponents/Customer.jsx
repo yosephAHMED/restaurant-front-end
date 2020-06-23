@@ -38,7 +38,7 @@ export default function Customer(props) {
     return (
         <div>
             {/* <form action=""> */}
-                <br style={{marginTop:'6em', background:"white"}}/>
+                {/* <br style={{marginTop:'60em', background:"white"}}/> */}
                 <label htmlFor="">Employee ID</label><br/>
                 <input type="text" value={user} onChange={(event)=>hand1(event)}/><br/>
                 <label htmlFor="">Password</label><br/>
