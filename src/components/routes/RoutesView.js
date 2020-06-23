@@ -19,6 +19,7 @@ const RoutesView = () => {
     const [employeeState, setEmployee] = useState(false);
 
     console.log(Auth.auth);
+
     return (
         <Switch>
             {/* <AuthApi.Provider value ="THIS IS A CHECKKKKKK"> */}

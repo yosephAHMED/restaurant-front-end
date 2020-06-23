@@ -3,12 +3,28 @@ import {
   REMOVE_FROM_CART,
   ADD_QUANTITY,
   SUB_QUANTITY,
+  DEPOSIT_COST,
+  WITHDRAW_COST,
 } from "./actions/action-types/cart-actions";
 
 const initState = {
-  addedItems: [],
-  total: 0,
+  balance: 0,
 };
+
+// Action Creators
+export const depositCostActionCreator = (foodprice) => {
+  return ({
+    type: DEPOSIT_COST,
+    foodprice
+  })
+}
+
+export const withdrawCostActionCreator = (foodprice) => {
+  return ({
+    type: WITHDRAW_COST,
+    foodprice
+  })
+}
 
 const cartReducer = (state = initState, action) => {
   switch (action.type) {
@@ -36,6 +52,18 @@ const cartReducer = (state = initState, action) => {
         };
       }
     }
+    case DEPOSIT_COST:
+      // console.log(typeof state.balance);
+      // console.log(typeof action.foodprice);
+      return {
+        ...state,
+        balance: state.balance + action.foodprice,
+      }
+    case WITHDRAW_COST:
+      return {
+        ...state,
+        balance: state.balance - action.foodprice,
+      }
     case REMOVE_FROM_CART: {
       let itemToRemove = state.addedItems.find((item) => action.id === item.id);
       let new_items = state.addedItems.filter((item) => action.id !== item.id);
@@ -87,4 +115,6 @@ const cartReducer = (state = initState, action) => {
       return state;
   }
 };
+
+// export to rootReducer
 export default cartReducer;
