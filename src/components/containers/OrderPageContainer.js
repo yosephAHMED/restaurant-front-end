@@ -93,7 +93,11 @@ class OrderPageContainer extends Component {
     }
 
     let url ='http://localhost:3001/addorder';
-    axios.post(url, { orderid:105, status:false, username:'tito', foodprice: x, orderitems:'random' }).catch((err)=>console.log(err))
+    axios.post(url, {status:false, username:'tito', foodprice: x, orderitems:JSON.stringify(this.state.order) }).catch((err)=>console.log(err))
+  
+    //axios.post(url, { orderid:106, status:false, username:'tito', foodprice: x, orderitems:JSON.stringify(this.state.order) }).catch((err)=>console.log(err))
+
+
   }
 
   render() {
