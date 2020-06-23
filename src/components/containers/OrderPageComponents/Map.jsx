@@ -30,11 +30,11 @@ export default function Map(props) {
   return props.lhsDisplay ? (
     <div>
       {props.map.map((food, item) => (
-        <div className="menu-sub-section-item">
+        <div className="menu-sub-section-item" style={{marginBottom:'20px'}}>
           <div className="menu-sub-section-item-name">{food.fooditem}</div>
           <div className="menu-sub-section-item-price">${food.foodprice}</div>
           <div className="menu-sub-section-item-description">
-            {food.fooddescription}
+          <p style={{width:'175px'}}>{food.fooddescription}</p>
             <button className="add-to-cart-btn" onClick={(event) => add({ food })}>Add to Cart</button>
           </div>
         </div>

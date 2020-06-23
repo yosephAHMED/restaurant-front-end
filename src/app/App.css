@@ -49,7 +49,7 @@
 /* globals */
 
 body {
-  padding-top: 66px;
+  /* padding-top: 66px; */
   color: var(--mainBlack);
   background: var(--mainWhite);
   font-family: Verdana, Geneva, Tahoma, sans-serif;

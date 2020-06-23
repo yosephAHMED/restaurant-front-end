@@ -33,7 +33,7 @@ const MenuPageView = (props) => {
                 ${food.foodprice}
               </div>
               <div className="menu-container-sub-section-item-description">
-                {food.fooddescription}
+                <p>{food.fooddescription}</p>
               </div>
             </div>
           ))}
