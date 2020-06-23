@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../views/styles/Navbar.css";
 
 import { Link } from "react-router-dom";
-// import logo from "src/images/Logo.png";
+import logo from "../../images/Logo.png";
 import { FiAlignCenter } from "react-icons/fi";
 
 class Navbar extends Component {
@@ -20,7 +20,7 @@ class Navbar extends Component {
         <div className="nav-center">
           <div className="nav_header">
             <Link to="/">
-              <img src='' alt="logo" className="logo" width="75%" height="75%" />
+              <img src={logo} alt="logo" className="logo" width="75%" height="75%" />
             </Link>
             <button
               type="button"
