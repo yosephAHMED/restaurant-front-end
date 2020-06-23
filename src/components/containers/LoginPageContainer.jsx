@@ -18,70 +18,30 @@ class LoginPageContainer extends Component {
         super(props);
 
         this.state = {
-            log:'',
-            arr: [],
-            arr2: []
+       
         }
     }
 
-    componentDidMount(){
-
-        
-    }
-    login2 = () =>{
+    validLogin = () =>{
         const auth = this.context;
         
         auth.setAuth(true);
         Cookies.set('user', 'loginTrue')
     }
-
-    login = () => {
-        
-        this.getOrders();
-    }
-
-    getOrders = () => {
-
-        axios.get("http://localhost:3001/pendingorders").then((res) => {
-            let temp = [];
-            (res.data).forEach(e => {
-                temp.push(e);
-            });
-            this.setState({arr: temp});
-        }).catch((err)=>{console.log(err)})
-
-        axios.get("http://localhost:3001/completedorders").then((res) => {
-            let temp = [];
-            (res.data).forEach(e => {
-                temp.push(e);
-            });
-            this.setState({arr2: temp});
-        }).catch((err)=>{console.log(err)})
-
-
-    }
+  
 
     render() {
-        const {arr, arr2} = this.state;
 
         return (
             <>  
             {   
-                // !this.props.logged ?
 
                 <div>
-                    <Customer login={this.login}/>
-                    <button onClick={this.login2}> Sign Up </button>
+                    <Customer login={this.validLogin}/>
+                    <button> Sign Up </button>
 
                 </div>
-            
-                //:
-               
-                // <div>
-                //     <Pending title='Pending Orders' map={arr} getorder={this.getOrders}/>
-                //     <Completed title='Completed Orders' map={arr2} getorder={this.getOrders}/>
-                //     <button onClick={() => this.props.logStatus}>Log Out</button>
-                // </div>
+
             }
 
             </>

@@ -81,7 +81,8 @@ app.post('/employees', async (req,res) => {
     let id = req.body.managerid;
     let pass = req.body.password;
 
-    let exist = await pool.query(`select * from customer where managerid = '${id}' AND password ='${pass}'`);
+    let exist = await pool.query(`select * from employee where managerid = ${id} AND password ='${pass}'`);
+
     if(exist.rowCount===0){
         res.json(null); return;
     }else{

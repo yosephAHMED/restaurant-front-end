@@ -3,6 +3,7 @@ import Pending from "./LoginPageComponents/Pending";
 import Completed from "./LoginPageComponents/Completed";
 import Cookies from 'js-cookie';
 import AuthApi from "../../app/AuthApi"
+import axios from "axios"
 
 export default class EmployeeLoginContainer extends Component {
 
@@ -10,6 +11,11 @@ export default class EmployeeLoginContainer extends Component {
 
     constructor(props){
         super(props);
+        this.state = {
+            arr1 : [],
+            arr2 : [],
+            setttt : true
+        }
     }
     logout = () =>{
 
@@ -18,14 +24,45 @@ export default class EmployeeLoginContainer extends Component {
         Cookies.remove("user");
 
     }
+    componentDidMount(){
+        this.getOrders();
+    }
+
+    reset = () => {
+
+        this.getOrders();
+    }
+
+
+    getOrders = () => {
+
+        axios.get("http://localhost:3001/pendingorders").then((res) => {
+            let temp = [];
+            (res.data).forEach(e => {
+                temp.push(e);
+            });
+            this.setState({arr1: temp});
+        }).catch((err)=>{console.log(err)})
+
+        axios.get("http://localhost:3001/completedorders").then((res) => {
+            let temp = [];
+            (res.data).forEach(e => {
+                temp.push(e);
+            });
+            this.setState({arr2: temp});
+        }).catch((err)=>{console.log(err)})
+
+
+    }
     render() {
+        const{arr1,arr2, setttt} = this.state;
         return (
             <div>
                     Employee
                     <button onClick={this.logout}>Logout</button>
-                    {/* <Pending title='Pending Orders' />
-                    <Completed title='Completed Orders' /> */}
-                    {/* <button onClick={() => this.props.logStatus}>Log Out</button> */}
+                    <Pending title='Pending Orders' map={arr1} getorder={this.reset}/>
+                    <Completed title='Completed Orders' map={arr2} getorder={this.reset} but={setttt}/> 
+                    {/* <button onClick={() => this.props.logStatus}>Log Out</button>*/}
             </div>
         )
     }
