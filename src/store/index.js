@@ -6,9 +6,11 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // Individual reducers altogether under an alias;
 import * as reducers from '../reducers';
+import islogged from "./utilities/islogged";
+import cartReducer from "./utilities/cartReducer";
 
 // Construct our Redux store;
-const rootReducer = combineReducers(reducers);
+const rootReducer = combineReducers({islogged, cartReducer});
 const logger = createLogger({ collapsed: true });
 const middleware = composeWithDevTools(applyMiddleware(thunkMiddleware, logger));
 const store = createStore(rootReducer, middleware);

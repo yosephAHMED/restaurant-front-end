@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsLock } from "react-icons/bs";
 
 export default function Map(props) {
+
   const add = (e) => {
     const id = e.food.foodid;
     const item = e.fooditem;
@@ -12,10 +13,13 @@ export default function Map(props) {
 
     props.order(e.food);
   };
+
   const sub = (item) => {
 
-    console.log(item.item);
     let temp = props.mapp;
+    console.log("temp: ", temp);
+    console.log("food price:" , temp[item.item].foodprice);
+    props.del(temp[item.item].foodprice);
 
     temp.splice(item.item,1);
     props.remove(temp);
@@ -42,7 +46,7 @@ export default function Map(props) {
         <div>
           {food.fooditem}&nbsp;
           <p style={{display: "inline"}}>${food.foodprice}</p>
-          <button className="remove-from-cart-btn" onClick={(event)=> sub({item})}>Remove</button>
+          <button className="remove-from-cart-btn" onClick={(event)=> sub({ item })}>Remove</button>
         </div>
       ))}
     </div>

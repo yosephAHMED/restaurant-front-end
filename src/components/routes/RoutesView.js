@@ -14,7 +14,7 @@ import AuthApi from "../../app/AuthApi"
 const RoutesView = () => {
 
     const Auth = React.useContext(AuthApi);
-    console.log(Auth.auth);
+    // console.log(Auth.auth);
     return (
         <Switch>
             {/* <AuthApi.Provider value ="THIS IS A CHECKKKKKK"> */}

@@ -8,6 +8,10 @@ import axios from "axios";
 import Map from "./OrderPageComponents/Map"
 // import { addToCart } from "../../store/utilities/actions/cartActions";
 // import { Cart } from "../functionComponents";
+import {
+  depositCostActionCreator,
+  withdrawCostActionCreator,
+} from "../../store/utilities/cartReducer";
 
 class OrderPageContainer extends Component {
   constructor() {
@@ -44,8 +48,6 @@ class OrderPageContainer extends Component {
           const responseDessert = res[2];
           const responseDrinks = res[3];
 
-          console.log("data in responseAppetizers: ", responseAppetizers.data);
-
           // do something with the data inside of responses
           // each response should be an array that contains an object for each food
           // that has the corresponding category we were searching for
@@ -68,19 +70,27 @@ class OrderPageContainer extends Component {
 
   handleClick = (x) => {
     this.setState({order: [...this.state.order,x], orderIn: true}, ()=>{
-      console.log(this.state.order)
     })
+
+    this.props.depositCostAction(Number(x.foodprice));
+  }
+
+  savePrice = (x) => {
+    console.log("savePrice X: ", Number(x));
+    this.props.withdrawCostAction(Number(x));
   }
 
   handleRemove = (x) => {
     this.setState({order: x}, ()=>{
       console.log(this.state.order)
     })
-
     if (this.state.order.length == 0){
       this.setState({ orderIn: false });
     }
+    // console.log("x foodprice: ", Number(x.foodprice))
+    // this.props.withdrawCostAction(Number(x.foodprice));
   }
+
   orderSubmit = () => {
 
     let x = 0;
@@ -157,7 +167,8 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
-                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} orderIn={orderIn} remove={this.handleRemove}/>
+                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} orderIn={orderIn} del={this.savePrice} remove={this.handleRemove}/>
+                ${this.props.balance}
               </div>
               <button className="order-submit-btn" onClick={this.orderSubmit}>Submit Order</button>
 
@@ -169,16 +180,22 @@ class OrderPageContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
+  // console.log("State balance: ", state.balance);
   return {
-    addedItems: state.addedItems,
+    balance: state.cartReducer.balance,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // addToCart: (foodid)=>{dispatch(addToCart(foodid))}
-  }
-}
+    depositCostAction(foodprice) {
+      dispatch(depositCostActionCreator(foodprice));
+    },
+    withdrawCostAction(foodprice) {
+      dispatch(withdrawCostActionCreator(foodprice));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrderPageContainer);
