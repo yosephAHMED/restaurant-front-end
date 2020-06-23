@@ -2,14 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { MenuPageView } from "../views";
-import { Hero, Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 class MenuPageContainer extends Component {
   constructor() {
     super();
-    this.state = { 
+    this.state = {
       appetizersArr: [],
       entreesArr: [],
       dessertsArr: [],
@@ -17,34 +16,49 @@ class MenuPageContainer extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
+    let appetizersLink = "http://localhost:3001/menu/appetizer";
+    let entreesLink = "http://localhost:3001/menu/entree";
+    let dessertLink = "http://localhost:3001/menu/dessert";
+    let drinksLink = "http://localhost:3001/menu/drinks";
 
-    axios.get("http://localhost:3001/menu").then((res) =>{
-      let data = res.data;
-      const arr = [];
+    const requestAppetizers = axios.get(appetizersLink);
+    const requestEntrees = axios.get(entreesLink);
+    const requestDessert = axios.get(dessertLink);
+    const requestDrinks = axios.get(drinksLink);
 
-      data.forEach(element => {
-        arr.push(element);
+    axios
+      .all([requestAppetizers, requestEntrees, requestDessert, requestDrinks])
+      .then(
+        axios.spread((...res) => {
+          const responseAppetizers = res[0];
+          const responseEntrees = res[1];
+          const responseDessert = res[2];
+          const responseDrinks = res[3];
+
+          this.setState({
+            appetizersArr: responseAppetizers.data,
+            entreesArr: responseEntrees.data,
+            dessertsArr: responseDessert.data,
+            drinksArr: responseDrinks.data,
+          });
+        })
+      )
+      .catch((err) => {
+        console.log("Error: " + err);
       });
-      this.setState({fooditems: arr});
-
-      console.log("ARRAY: " + this.state.fooditems);
-
-    }).catch((err)=>{console.log("Error: " + err)})
   }
 
   render() {
-    const {fooditems} = this.state;
+    const { appetizersArr, entreesArr, dessertsArr, drinksArr } = this.state;
     return (
       <>
-        <Hero hero="menuHero">
-          <Banner title="our menu" subtitle="quality food made from quality materials">
-            <Link to="/" className="btn-primary">
-              Return Home
-            </Link>
-          </Banner>
-
-        </Hero>
+        <MenuPageView
+          appetizers={appetizersArr}
+          entrees={entreesArr}
+          desserts={dessertsArr}
+          drinks={drinksArr}
+        />
       </>
     );
   }

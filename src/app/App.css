@@ -520,6 +520,9 @@ hr.w250 {
   border-top: 1px solid aqua;
 }
 
+/* end of footer */
+
+/* start of order */
 .menu-order-container {
   display: flex;
 }
