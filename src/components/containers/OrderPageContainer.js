@@ -24,6 +24,7 @@ class OrderPageContainer extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     let appetizersLink = "http://localhost:3001/menu/appetizer";
     let entreesLink = "http://localhost:3001/menu/entree";
     let dessertLink = "http://localhost:3001/menu/dessert";
