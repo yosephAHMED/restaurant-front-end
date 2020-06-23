@@ -11,6 +11,7 @@ import Map from "./OrderPageComponents/Map"
 import {
   depositCostActionCreator,
   withdrawCostActionCreator,
+  clearCostActionCreator,
 } from "../../store/utilities/cartReducer";
 
 class OrderPageContainer extends Component {
@@ -113,7 +114,12 @@ class OrderPageContainer extends Component {
   
     //axios.post(url, { orderid:106, status:false, username:'tito', foodprice: x, orderitems:JSON.stringify(this.state.order) }).catch((err)=>console.log(err))
 
-
+    alert("Your order is being prepared");
+    this.setState({ 
+      order: [],
+      orderIn: false,
+    })
+    this.props.clearCostAction();
   }
 
   render() {
@@ -172,7 +178,7 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
                 <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} orderIn={orderIn} del={this.savePrice} remove={this.handleRemove}/>
-                ${this.props.balance}
+                Total: ${this.props.balance}
               </div>
               <button className="order-submit-btn" onClick={this.orderSubmit}>Submit Order</button>
 
@@ -198,6 +204,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     withdrawCostAction(foodprice) {
       dispatch(withdrawCostActionCreator(foodprice));
+    },
+    clearCostAction() {
+      dispatch(clearCostActionCreator());
     },
   };
 };

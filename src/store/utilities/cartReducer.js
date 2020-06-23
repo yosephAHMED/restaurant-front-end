@@ -5,6 +5,7 @@ import {
   SUB_QUANTITY,
   DEPOSIT_COST,
   WITHDRAW_COST,
+  CLEAR_COST,
 } from "./actions/action-types/cart-actions";
 
 const initState = {
@@ -23,6 +24,12 @@ export const withdrawCostActionCreator = (foodprice) => {
   return ({
     type: WITHDRAW_COST,
     foodprice
+  })
+}
+
+export const clearCostActionCreator = () => {
+  return ({
+    type: CLEAR_COST,
   })
 }
 
@@ -58,6 +65,11 @@ const cartReducer = (state = initState, action) => {
       return {
         ...state,
         balance: state.balance + action.foodprice,
+      }
+    case CLEAR_COST:
+      return {
+        ...state,
+        balance: 0,
       }
     case WITHDRAW_COST:
       return {
