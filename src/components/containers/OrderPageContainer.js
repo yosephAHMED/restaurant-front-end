@@ -5,6 +5,8 @@ import { MenuPageView } from "../views";
 import { Hero, Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { addToCart } from "../../store/utilities/actions/cartActions";
+import { Cart } from "../functionComponents";
 
 class OrderPageContainer extends Component {
   constructor() {
@@ -14,11 +16,7 @@ class OrderPageContainer extends Component {
       entreesArr: [],
       dessertsArr: [],
       drinksArr: [],
-      order: [
-        {
-          fooditem: "spinach",
-        },
-      ],
+      order: [],
     };
   }
 
@@ -57,10 +55,6 @@ class OrderPageContainer extends Component {
             drinksArr: responseDrinks.data,
           });
 
-          // console.log("appetizers state: ", this.state.appetizersArr);
-          // console.log("entrees state: ", this.state.entrees);
-          // console.log("desserts state: ", this.state.desserts);
-          // console.log("drinks state: ", this.state.drinks);
         })
       )
       .catch((err) => {
@@ -213,9 +207,7 @@ class OrderPageContainer extends Component {
             <div className="order-main-container-rhs-center">
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
-                {this.state.order.map((food, item) => (
-                  <div>{food.fooditem}</div>
-                ))}
+                <Cart />
               </div>
             </div>
           </div>
@@ -231,4 +223,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(OrderPageContainer);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToCart: (foodid)=>{dispatch(addToCart(foodid))}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(OrderPageContainer);
