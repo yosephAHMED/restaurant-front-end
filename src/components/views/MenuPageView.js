@@ -37,12 +37,64 @@ const MenuPageView = (props) => {
               </div>
             </div>
           ))}
+          {props.appetizers.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
+          {props.appetizers.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="menu-container-section-container">
           <div className="menu-container-section-container-name">Entrees</div>
         </div>
         <div className="menu-container-sub-section">
+          {props.entrees.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
+          {props.entrees.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
           {props.entrees.map((food, item) => (
             <div className="menu-container-sub-section-item">
               <div className="menu-container-sub-section-item-name">
@@ -75,12 +127,64 @@ const MenuPageView = (props) => {
               </div>
             </div>
           ))}
+          {props.desserts.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
+          {props.desserts.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
         </div>
 
         <div className="menu-container-section-container">
           <div className="menu-container-section-container-name">Drinks</div>
         </div>
         <div className="menu-container-sub-section">
+          {props.drinks.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
+          {props.drinks.map((food, item) => (
+            <div className="menu-container-sub-section-item">
+              <div className="menu-container-sub-section-item-name">
+                {food.fooditem}
+              </div>
+              <div className="menu-container-sub-section-item-price">
+                ${food.foodprice}
+              </div>
+              <div className="menu-container-sub-section-item-description">
+                {food.fooddescription}
+              </div>
+            </div>
+          ))}
           {props.drinks.map((food, item) => (
             <div className="menu-container-sub-section-item">
               <div className="menu-container-sub-section-item-name">
