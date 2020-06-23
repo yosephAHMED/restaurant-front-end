@@ -37,7 +37,6 @@ class LoginPageContainer extends Component {
 
     emp = () =>{
         this.setState({start:false, showEmp:true})
-        //alert(this.props.c(true))
         alert(this.props.ca)
 
 
@@ -54,7 +53,13 @@ class LoginPageContainer extends Component {
 
         return (
             <>  
-            {   
+
+                <div className="login123">
+                    <Customer login={this.validLogin}/>
+                    <button style={{marginTop:'25%', marginLeft: '50%', transform:'translateX(-50%)'}}> Emp Sign Up </button>
+                </div>)
+
+            {/* {   
             this.props.ca ?
             (
             <div>
@@ -79,7 +84,7 @@ class LoginPageContainer extends Component {
                 }
                 </div>
             )
-            }
+            } */}
 
             </>
         )

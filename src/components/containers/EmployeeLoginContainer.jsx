@@ -42,6 +42,7 @@ export default class EmployeeLoginContainer extends Component {
                 let tem = e;
                 // let jsnobject = JSON.stringify(e.orderitems);
                 tem.orderitems = JSON.parse(e.orderitems)
+                console.log("Push")
                 console.log(tem)
                 temp.push(tem);
             });

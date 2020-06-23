@@ -38,8 +38,11 @@ export default function Customer(props) {
     return (
         <div>
             {/* <form action=""> */}
-                <input type="text" style={{marginTop:'8em'}}value={user} onChange={(event)=>hand1(event)}/><br/>
-                <input type="password" value={pass} onChange={(event)=>hand2(event)}/>
+                <br style={{marginTop:'6em', background:"white"}}/>
+                <label htmlFor="">Employee ID</label><br/>
+                <input type="text" value={user} onChange={(event)=>hand1(event)}/><br/>
+                <label htmlFor="">Password</label><br/>
+                <input type="password" value={pass} onChange={(event)=>hand2(event)}/><br/>
                 <button onClick={dis} >Log In</button>
                 {/* {logged ? <h1> logged </h1> : <h1> not logged </h1>} */}
             {/* </form> */}
