@@ -4,6 +4,7 @@ import {
   ADD_QUANTITY,
   SUB_QUANTITY,
   DEPOSIT_COST,
+  WITHDRAW_COST,
 } from "./actions/action-types/cart-actions";
 
 const initState = {
@@ -14,6 +15,13 @@ const initState = {
 export const depositCostActionCreator = (foodprice) => {
   return ({
     type: DEPOSIT_COST,
+    foodprice
+  })
+}
+
+export const withdrawCostActionCreator = (foodprice) => {
+  return ({
+    type: WITHDRAW_COST,
     foodprice
   })
 }
@@ -48,7 +56,13 @@ const cartReducer = (state = initState, action) => {
       // console.log(typeof state.balance);
       // console.log(typeof action.foodprice);
       return {
+        ...state,
         balance: state.balance + action.foodprice,
+      }
+    case WITHDRAW_COST:
+      return {
+        ...state,
+        balance: state.balance - action.foodprice,
       }
     case REMOVE_FROM_CART: {
       let itemToRemove = state.addedItems.find((item) => action.id === item.id);

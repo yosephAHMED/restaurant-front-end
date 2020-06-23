@@ -10,6 +10,7 @@ import Map from "./OrderPageComponents/Map"
 // import { Cart } from "../functionComponents";
 import {
   depositCostActionCreator,
+  withdrawCostActionCreator,
 } from "../../store/utilities/cartReducer";
 
 class OrderPageContainer extends Component {
@@ -69,21 +70,25 @@ class OrderPageContainer extends Component {
 
   handleClick = (x) => {
     this.setState({order: [...this.state.order,x], orderIn: true}, ()=>{
-      console.log("state of order: ", this.state.order)
-      console.log("x foodprice: ", x.foodprice);
     })
 
     this.props.depositCostAction(Number(x.foodprice));
+  }
+
+  savePrice = (x) => {
+    console.log("savePrice X: ", Number(x));
+    this.props.withdrawCostAction(Number(x));
   }
 
   handleRemove = (x) => {
     this.setState({order: x}, ()=>{
       console.log(this.state.order)
     })
-
     if (this.state.order.length == 0){
       this.setState({ orderIn: false });
     }
+    // console.log("x foodprice: ", Number(x.foodprice))
+    // this.props.withdrawCostAction(Number(x.foodprice));
   }
 
   orderSubmit = () => {
@@ -162,7 +167,7 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
-                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} orderIn={orderIn} remove={this.handleRemove}/>
+                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} orderIn={orderIn} del={this.savePrice} remove={this.handleRemove}/>
                 ${this.props.balance}
               </div>
               <button className="order-submit-btn" onClick={this.orderSubmit}>Submit Order</button>
@@ -176,7 +181,7 @@ class OrderPageContainer extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log("State balance: ", state.balance);
+  // console.log("State balance: ", state.balance);
   return {
     balance: state.cartReducer.balance,
   };
@@ -186,6 +191,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     depositCostAction(foodprice) {
       dispatch(depositCostActionCreator(foodprice));
+    },
+    withdrawCostAction(foodprice) {
+      dispatch(withdrawCostActionCreator(foodprice));
     },
   };
 };
