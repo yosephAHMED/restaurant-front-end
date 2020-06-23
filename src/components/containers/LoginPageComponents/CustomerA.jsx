@@ -17,8 +17,8 @@ export default function Customer(props) {
         console.log(logged);
         dispatch(logStatus());
         console.log(user);
-        let url ='http://localhost:3001/employees';
-        axios.post(url, { managerid: Number(user), password: pass}).then(res=>{
+        let url ='http://localhost:3001/user';
+        axios.post(url, { username: user, password: pass}).then(res=>{
             if(res.data.length === 1){
                 props.login();
             }
@@ -38,11 +38,8 @@ export default function Customer(props) {
     return (
         <div>
             {/* <form action=""> */}
-                {/* <br style={{marginTop:'60em', background:"white"}}/> */}
-                <label htmlFor="">Employee ID</label><br/>
-                <input type="text" value={user} onChange={(event)=>hand1(event)}/><br/>
-                <label htmlFor="">Password</label><br/>
-                <input type="password" value={pass} onChange={(event)=>hand2(event)}/><br/>
+                <input type="text" style={{marginTop:'8em'}}value={user} onChange={(event)=>hand1(event)}/><br/>
+                <input type="password" value={pass} onChange={(event)=>hand2(event)}/>
                 <button onClick={dis} >Log In</button>
                 {/* {logged ? <h1> logged </h1> : <h1> not logged </h1>} */}
             {/* </form> */}

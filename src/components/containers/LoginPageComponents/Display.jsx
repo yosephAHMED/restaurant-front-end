@@ -76,8 +76,8 @@ export default function Display(props) {
 
             <ExpansionPanel  onChange={handleChange()}>
                 <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
-                    <ul className= 'emul' style={{display:'flex', fontWeight:'600'}}>
-                        <li> ID </li> <li> Customer</li> <li> Price</li>
+                    <ul className= 'emul' style={{display:'flex', fontWeight:'600', textAlign:'center'}}>
+                        <li> Order ID </li>  <li> Price</li>
                     </ul>
                 </ExpansionPanelSummary>
             </ExpansionPanel>
@@ -88,16 +88,22 @@ export default function Display(props) {
                 <ExpansionPanel square expanded={expanded === k} onChange={handleChange(k)}>
                     <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
                             
-                        <ul className= 'emul' style={{display:'flex'}}>
-                            <li>{val.orderid}</li> <li>{val.username}</li> <li>{val.price}</li>
+                        <ul key ={k} className= 'emul' style={{display:'flex'}}>
+                  <li>{val.orderid}</li> <li>{val.price}</li> <span></span>
                         </ul>
+                
+                        
 
                     </ExpansionPanelSummary>
 
                     <ExpansionPanelDetails>
 
                         <Typography>
-                            {val.orderitems}
+                            {(val.orderitems).map((o,v)=>(
+                              <div>{o.fooditem}</div>
+                            ))
+                            }
+                            {/* {val.orderitems.length} */}
                         </Typography>
 
                         {props.but ? <button onClick={(event)=>completed(val.orderid)}style={{position:'absolute', right:'10%'}}> Finish </button> : ''}
