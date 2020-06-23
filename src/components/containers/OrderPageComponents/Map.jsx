@@ -12,6 +12,16 @@ export default function Map(props) {
 
     props.order(e.food);
   };
+  const sub = (item) => {
+
+    console.log(item.item);
+    let temp = props.mapp;
+
+    temp.splice(item.item,1);
+    props.remove(temp);
+  }
+
+
 
   return props.lhsDisplay ? (
     <div>
@@ -28,10 +38,11 @@ export default function Map(props) {
     </div>
   ) : (
     <div>
-      {props.map.map((food, item) => (
+      {props.mapp.map((food, item) => (
         <div>
           {food.fooditem}&nbsp;
           <p style={{display: "inline"}}>${food.foodprice}</p>
+          <button onClick={(event)=> sub({item})}>Remove</button>
         </div>
       ))}
     </div>

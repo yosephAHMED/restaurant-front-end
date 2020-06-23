@@ -67,10 +67,13 @@ class OrderPageContainer extends Component {
 
 
   handleClick = (x) => {
-
-
-
     this.setState({order: [...this.state.order,x]}, ()=>{
+      console.log(this.state.order)
+    })
+  }
+
+  handleRemove = (x) => {
+    this.setState({order: x}, ()=>{
       console.log(this.state.order)
     })
   }
@@ -130,7 +133,7 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
-                <Map map={order} title="Orders" lhsDisplay={!lhsDisplay}/>
+                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} remove={this.handleRemove}/>
 
               </div>
             </div>
