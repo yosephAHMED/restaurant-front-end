@@ -5,6 +5,8 @@ import { MenuPageView } from "../views";
 import { Hero, Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 import axios from "axios";
+// import { addToCart } from "../../store/utilities/actions/cartActions";
+// import { Cart } from "../functionComponents";
 
 class OrderPageContainer extends Component {
   constructor() {
@@ -12,7 +14,7 @@ class OrderPageContainer extends Component {
     this.state = {
       appetizersArr: [],
       entreesArr: [],
-      dessertArr: [],
+      dessertsArr: [],
       drinksArr: [],
       order: [],
     };
@@ -49,19 +51,19 @@ class OrderPageContainer extends Component {
           this.setState({
             appetizersArr: responseAppetizers.data,
             entreesArr: responseEntrees.data,
-            dessertArr: responseDessert.data,
+            dessertsArr: responseDessert.data,
             drinksArr: responseDrinks.data,
           });
 
-          // console.log("appetizers state: ", this.state.appetizersArr);
-          // console.log("entrees state: ", this.state.entrees);
-          // console.log("desserts state: ", this.state.desserts);
-          // console.log("drinks state: ", this.state.drinks);
         })
       )
       .catch((err) => {
         console.log("Error: " + err);
       });
+  }
+
+  handleClick = (foodid) => {
+    this.props.addToCart(foodid);
   }
 
   render() {
@@ -75,13 +77,9 @@ class OrderPageContainer extends Component {
           />
         </Hero>
 
-        {/* {console.log("appetizers in render: ", appetizersArr)} */}
-
         <div className="menu-order-container">
-
           {/* LHS for MENU */}
           <div className="menu-main-container-lhs">
-
             {/* APPETIZERS AND SALADS SECTION */}
             <div className="menu-section-container">
               <span className="menu-section-container-name">
@@ -89,106 +87,146 @@ class OrderPageContainer extends Component {
               </span>
             </div>
             <div className="menu-sub-section">
-                 {/* PRINT OUT APPETIZERS ARRAY */}
-                {appetizersArr.map((food, item) => (
-                  <div className="menu-sub-section-item">
-                    <div className="menu-sub-section-item-name">
-                      {food.fooditem}
-                    </div>
-                    <div className="menu-sub-section-item-price">
-                      ${food.foodprice}
-                    </div>
-                    <div className="menu-sub-section-item-description">
-                      {food.fooddescription}
-                    </div>
+              {/* PRINT OUT APPETIZERS ARRAY */}
+              {appetizersArr.map((food, item) => (
+                <div className="menu-sub-section-item">
+                  <div className="menu-sub-section-item-name">
+                    {food.fooditem}
                   </div>
-                ))}
-                {/* END OF APPETIZER ARRAY SECTION */}
+                  <div className="menu-sub-section-item-price">
+                    ${food.foodprice}
+                  </div>
+                  <div className="menu-sub-section-item-description">
+                    {food.fooddescription}
+                  </div>
+                  <button
+                    onClick={() => {
+                      this.handleClick(food.foodid);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+              {/* END OF APPETIZER ARRAY SECTION */}
             </div>
             {/* END OF APPETIZERS AND SALADS SECTION */}
 
             {/* ENTREES SECTION */}
             <div className="menu-section-container">
-              <span className="menu-section-container-name">
-                ENTREES
-              </span>
+              <span className="menu-section-container-name">ENTREES</span>
             </div>
             <div className="menu-sub-section">
-                 {/* PRINT OUT ENTREES ARRAY */}
-                {entreesArr.map((food, item) => (
-                  <div className="menu-sub-section-item">
-                    <div className="menu-sub-section-item-name">
-                      {food.fooditem}
-                    </div>
-                    <div className="menu-sub-section-item-price">
-                      ${food.foodprice}
-                    </div>
-                    <div className="menu-sub-section-item-description">
-                      {food.fooddescription}
-                    </div>
+              {/* PRINT OUT ENTREES ARRAY */}
+              {entreesArr.map((food, item) => (
+                <div className="menu-sub-section-item">
+                  <div className="menu-sub-section-item-name">
+                    {food.fooditem}
                   </div>
-                ))}
-                {/* END OF ENTREES ARRAY */}
+                  <div className="menu-sub-section-item-price">
+                    ${food.foodprice}
+                  </div>
+                  <div className="menu-sub-section-item-description">
+                    {food.fooddescription}
+                  </div>
+                  <button
+                    onClick={() => {
+                      this.handleClick(food.foodid);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+              {/* END OF ENTREES ARRAY */}
             </div>
             {/* END OF ENTREES SECTION */}
 
             {/* DESSERTS SECTION */}
             <div className="menu-section-container">
-              <span className="menu-section-container-name">
-                DESSERTS
-              </span>
+              <span className="menu-section-container-name">DESSERTS</span>
             </div>
             <div className="menu-sub-section">
-                 {/* PRINT OUT DESSERTS ARRAY */}
-                {/* {dessertsArr.map((food, item) => (
-                  <div className="menu-sub-section-item">
-                    <div className="menu-sub-section-item-name">
-                      {food.fooditem}
-                    </div>
-                    <div className="menu-sub-section-item-price">
-                      ${food.foodprice}
-                    </div>
-                    <div className="menu-sub-section-item-description">
-                      {food.fooddescription}
-                    </div>
+              {/* PRINT OUT DESSERTS ARRAY */}
+              {dessertsArr.map((food, item) => (
+                <div className="menu-sub-section-item">
+                  <div className="menu-sub-section-item-name">
+                    {food.fooditem}
                   </div>
-                ))} */}
-                {/* END OF DESSERTS ARRAY */}
+                  <div className="menu-sub-section-item-price">
+                    ${food.foodprice}
+                  </div>
+                  <div className="menu-sub-section-item-description">
+                    {food.fooddescription}
+                  </div>
+                  <button
+                    onClick={() => {
+                      this.handleClick(food.foodid);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+              {/* END OF DESSERTS ARRAY */}
             </div>
             {/* END OF DESSERTS SECTION */}
 
             {/* DRINKS SECTION */}
             <div className="menu-section-container">
-              <span className="menu-section-container-name">
-                DRINKS
-              </span>
+              <span className="menu-section-container-name">DRINKS</span>
             </div>
             <div className="menu-sub-section">
-                 {/* PRINT OUT DRINKS ARRAY */}
-                {drinksArr.map((food, item) => (
-                  <div className="menu-sub-section-item">
-                    <div className="menu-sub-section-item-name">
-                      {food.fooditem}
-                    </div>
-                    <div className="menu-sub-section-item-price">
-                      ${food.foodprice}
-                    </div>
-                    <div className="menu-sub-section-item-description">
-                      {food.fooddescription}
-                    </div>
+              {/* PRINT OUT DRINKS ARRAY */}
+              {drinksArr.map((food, item) => (
+                <div className="menu-sub-section-item">
+                  <div className="menu-sub-section-item-name">
+                    {food.fooditem}
                   </div>
-                ))}
-                {/* END OF DRINKS ARRAY */}
+                  <div className="menu-sub-section-item-price">
+                    ${food.foodprice}
+                  </div>
+                  <div className="menu-sub-section-item-description">
+                    {food.fooddescription}
+                  </div>
+                  <button
+                    onClick={() => {
+                      this.handleClick(food.foodid);
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              ))}
+              {/* END OF DRINKS ARRAY */}
             </div>
             {/* END OF DRINKS SECTION */}
-
           </div>
           {/* RHS for ORDER */}
-          <div className="order-main-container-rhs">test</div>
+          <div className="order-main-container-rhs">
+            <div className="order-main-container-rhs-center">
+              <div className="order-main-container-rhs-center-title">ORDER</div>
+              <div className="order-main-container-rhs-center-order-list">
+                {/* <Cart /> */}
+              </div>
+            </div>
+          </div>
         </div>
       </>
     );
   }
 }
 
-export default OrderPageContainer;
+const mapStateToProps = (state) => {
+  return {
+    addedItems: state.addedItems,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    // addToCart: (foodid)=>{dispatch(addToCart(foodid))}
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(OrderPageContainer);
