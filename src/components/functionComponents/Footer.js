@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { SectionTitle } from ".";
-// import logo from "src/images/Logo.png";
+import logo from "../../images/Logo.png";
 
 export default class Footer extends Component {
   render() {
@@ -43,7 +43,7 @@ export default class Footer extends Component {
                     <ul className="footer-list-restaurant-info">
                       <li className="footer-item-restaurant-info">
                         <Link to="/">
-                          <img src='' alt="logo" width="50%" height="50%" />
+                          <img src={logo} alt="logo" width="50%" height="50%" />
                         </Link>
                       </li>
                       <li className="footer-item-restaurant-info">
