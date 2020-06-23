@@ -54,7 +54,7 @@ export default function HomePageContainer() {
               subtitle="join us for lunch & dinner"
             >
             <Link to="/menu" className="btn-primary"> 
-              This is a link
+              View Our Menu
             </Link>
             </Banner>
           </Hero>
