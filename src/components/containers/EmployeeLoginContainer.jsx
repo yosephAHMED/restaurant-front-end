@@ -57,11 +57,12 @@ export default class EmployeeLoginContainer extends Component {
     render() {
         const{arr1,arr2, setttt} = this.state;
         return (
-            <div>
-                    Employee
-                    <button onClick={this.logout}>Logout</button>
+            <div className="employeeLog">
+                    
                     <Pending title='Pending Orders' map={arr1} getorder={this.reset}/>
                     <Completed title='Completed Orders' map={arr2} getorder={this.reset} but={setttt}/> 
+                    <button onClick={this.logout}>Logout</button>
+
                     {/* <button onClick={() => this.props.logStatus}>Log Out</button>*/}
             </div>
         )
