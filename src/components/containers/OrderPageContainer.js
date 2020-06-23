@@ -5,8 +5,8 @@ import { MenuPageView } from "../views";
 import { Hero, Banner } from "../functionComponents";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { addToCart } from "../../store/utilities/actions/cartActions";
-import { Cart } from "../functionComponents";
+// import { addToCart } from "../../store/utilities/actions/cartActions";
+// import { Cart } from "../functionComponents";
 
 class OrderPageContainer extends Component {
   constructor() {
@@ -207,7 +207,7 @@ class OrderPageContainer extends Component {
             <div className="order-main-container-rhs-center">
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
-                <Cart />
+                {/* <Cart /> */}
               </div>
             </div>
           </div>
@@ -225,7 +225,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: (foodid)=>{dispatch(addToCart(foodid))}
+    // addToCart: (foodid)=>{dispatch(addToCart(foodid))}
   }
 }
 
