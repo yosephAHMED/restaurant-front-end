@@ -35,8 +35,7 @@ const RoutesView = () => {
             <ProtectedLogin exact path="/login" c={valid} ca={valid} e={setEmployee} auth={Auth.auth} component={LoginPageContainer} />
             <ProtectedRoute exact path="/employee" auth={Auth.auth} component={EmployeeLoginContainer} />
             {/**Setting up the error page route */}
-            {/* <Route component={ErrorPageContainer} /> */}
-            {/* </AuthApi.Provider> */}
+            <Route component={ErrorPageContainer} />
 
         </Switch>
     );
