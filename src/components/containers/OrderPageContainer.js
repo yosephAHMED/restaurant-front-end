@@ -19,6 +19,7 @@ class OrderPageContainer extends Component {
       drinksArr: [],
       order: [],
       lhsDisplay: true,
+      orderIn: false,
     };
   }
 
@@ -65,7 +66,7 @@ class OrderPageContainer extends Component {
   }
 
   handleClick = (x) => {
-    this.setState({order: [...this.state.order,x]}, ()=>{
+    this.setState({order: [...this.state.order,x], orderIn: true}, ()=>{
       console.log(this.state.order)
     })
   }
@@ -74,6 +75,10 @@ class OrderPageContainer extends Component {
     this.setState({order: x}, ()=>{
       console.log(this.state.order)
     })
+
+    if (this.state.order.length == 0){
+      this.setState({ orderIn: false });
+    }
   }
   orderSubmit = () => {
 
@@ -97,7 +102,7 @@ class OrderPageContainer extends Component {
   }
 
   render() {
-    const { appetizersArr, entreesArr, dessertsArr, drinksArr, order, lhsDisplay } = this.state;
+    const { appetizersArr, entreesArr, dessertsArr, drinksArr, order, lhsDisplay, orderIn } = this.state;
     return (
       <>
         <Hero hero="orderHero">
@@ -151,7 +156,7 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
-                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} remove={this.handleRemove}/>
+                <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} orderIn={orderIn} remove={this.handleRemove}/>
               </div>
               <button className="order-submit-btn" onClick={this.orderSubmit}>Submit Order</button>
 

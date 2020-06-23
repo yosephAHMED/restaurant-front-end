@@ -36,7 +36,7 @@ export default function Map(props) {
         </div>
       ))}
     </div>
-  ) : (
+  ) : (props.orderIn ? (
     <div>
       {props.mapp.map((food, item) => (
         <div>
@@ -46,5 +46,5 @@ export default function Map(props) {
         </div>
       ))}
     </div>
-  );
+  ) : (<div>No items yet</div>))
 }
