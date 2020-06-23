@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const pool = require('./db');
+const { query } = require('./db');
 
 app.use(express.json());
 app.use(cors());
@@ -43,6 +44,12 @@ app.get('/pendingorders', async (req, res) =>{
 })
 app.get('/completedorders', async (req, res) =>{
     let completedOrders = await pool.query("Select * from orders where status");
+    res.json(completedOrders.rows);
+})
+app.get('/orders/:id', async (req, res) =>{
+    let x = req.params.id;
+    console.log(x)
+    let completedOrders = await pool.query(`Select * from orders where orderid = ${x}`);
     res.json(completedOrders.rows);
 })
 
@@ -109,6 +116,25 @@ app.post('/newemployee', async (req,res) =>{
         res.json("Manager id exists")
     }
 
+})
+
+//PUT request to update
+
+//updates order from pending to complete
+app.put('/orders/:id', async (req, res) => {
+    
+    try{
+
+        const {id} = req.params;
+        const {status} = req.body;
+        console.log(status)
+
+        const updateOrder = await pool.query(`Update orders SET status = true where orderid = ${id}`);
+
+        res.json(updateOrder);
+    }catch(err){
+        res.json(err);
+    }
 })
 
 
