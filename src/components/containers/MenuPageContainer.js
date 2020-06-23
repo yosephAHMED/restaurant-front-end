@@ -9,7 +9,12 @@ import axios from "axios";
 class MenuPageContainer extends Component {
   constructor() {
     super();
-    this.state = { fooditems: []};
+    this.state = { 
+      appetizersArr: [],
+      entreesArr: [],
+      dessertsArr: [],
+      drinksArr: [],
+    };
   }
 
   componentDidMount(){
@@ -40,13 +45,6 @@ class MenuPageContainer extends Component {
           </Banner>
 
         </Hero>
-
-        {
-          fooditems.map((value,k) => (
-            <h4 key={k}> {value.fooditem}&nbsp;{value.fooddescription}&nbsp;{value.foodprice}</h4>
-          ))
-        }
-
       </>
     );
   }

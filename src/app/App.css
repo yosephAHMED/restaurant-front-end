@@ -158,7 +158,7 @@ h6 {
 }
 
 .menuHero {
-  /* background-image: url("../images/banner_menu.jpg"); */
+  background-image: url("../images/banner_menu.jpg");
   min-height: 75vh;
 }
 
