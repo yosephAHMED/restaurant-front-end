@@ -25,7 +25,7 @@ export default function App() {
 
         <Navbar/>
         <RoutesView />
-        {/* <Footer /> */}
+        <Footer />
 
       </AuthApi.Provider>
     </div>

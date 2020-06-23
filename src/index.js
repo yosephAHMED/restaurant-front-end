@@ -11,10 +11,10 @@ import {createStore} from "redux";
 import allReducers from "./reducers"
 import AuthApi from "./app/AuthApi"
 
-const store = createStore(
-  allReducers, 
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+// const store = createStore(
+//   allReducers, 
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
 // const AuthApi = createContext();
 
 ReactDOM.render(

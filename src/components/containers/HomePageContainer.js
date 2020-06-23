@@ -58,6 +58,7 @@ export default function HomePageContainer() {
             </Link>
             </Banner>
           </Hero>
+          <HomePageView />
     </div>
   )
 }
