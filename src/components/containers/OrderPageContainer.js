@@ -64,8 +64,6 @@ class OrderPageContainer extends Component {
       });
   }
 
-
-
   handleClick = (x) => {
     this.setState({order: [...this.state.order,x]}, ()=>{
       console.log(this.state.order)
@@ -76,6 +74,26 @@ class OrderPageContainer extends Component {
     this.setState({order: x}, ()=>{
       console.log(this.state.order)
     })
+  }
+  orderSubmit = () => {
+
+    let x = 0;
+
+    (this.state.order).forEach(i=>{
+      x = x + Number(i.foodprice);
+    })
+    console.log(this.state.order);
+
+    const obj = {
+      orderid: 105,
+      status: false,
+      username: "xyz",
+      price: x,
+      orderitems: "random"
+    }
+
+    let url ='http://localhost:3001/addorder';
+    axios.post(url, { orderid:105, status:false, username:'tito', foodprice: x, orderitems:'random' }).catch((err)=>console.log(err))
   }
 
   render() {
@@ -134,8 +152,9 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
                 <Map mapp={order} title="Orders" lhsDisplay={!lhsDisplay} remove={this.handleRemove}/>
-
               </div>
+              <button onClick={this.orderSubmit}> Submit </button>
+
             </div>
           </div>
         </div>

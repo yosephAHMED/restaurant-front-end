@@ -118,6 +118,23 @@ app.post('/newemployee', async (req,res) =>{
 
 })
 
+app.post('/addorder', async (req,res) =>{
+    // console.log(req.body.foodprice);
+    let id = req.body.orderid;
+    let price = req.body.foodprice;
+    let name = req.body.username;
+    let status = req.body.status;
+    let items = req.body.orderitems;
+
+    try{
+        let add = await pool.query(`Insert into orders values (${id},${status},'${name}',${price},'${items}')`);
+        res.json(add);
+    }catch(err){
+        res.json(err)
+    }
+
+})
+
 //PUT request to update
 
 //updates order from pending to complete
