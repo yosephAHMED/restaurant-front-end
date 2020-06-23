@@ -2,7 +2,7 @@
 export { default as HomePageContainer } from "./HomePageContainer";
 export { default as MenuPageContainer } from "./MenuPageContainer";
 export { default as FoodPageContainer } from "./FoodPageContainer";
-
 export { default as LoginPageContainer } from "./LoginPageContainer";
+export { default as EmployeeLoginContainer } from "./EmployeeLoginContainer";
 export { default as ErrorPageContainer } from "./ErrorPageContainer";
 export { default as OrderPageContainer } from "./OrderPageContainer";

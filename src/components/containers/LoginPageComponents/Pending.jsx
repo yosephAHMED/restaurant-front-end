@@ -10,7 +10,7 @@ export default function Pending(props) {
 
     return (
         <div>
-            {/* {logged ? <h1> logged </h1> : <h1> not logged </h1>} */}
+            {logged ? <h1> logged </h1> : <h1> not logged </h1>}
             <h4>{props.title}</h4>
 
             {props.map.length === 0 ? 

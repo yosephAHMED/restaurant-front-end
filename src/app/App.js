@@ -1,25 +1,51 @@
 import React, { Component } from "react";
 import "./App.css";
-import RoutesContainer from "../components/routes/RoutesContainer";
+// import RoutesContainer from "../components/routes/RoutesContainer";
+import RoutesView from "../components/routes/RoutesView"
 import { Navbar, Footer } from "../components/functionComponents";
+import AuthApi from "./AuthApi";
+import Cookies from 'js-cookie';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {};
+export default function App() {
+
+  const[auth, setAuth] = React.useState(false);
+  const readCookie = () => {
+    const user = Cookies.get("user");
+    if(user){
+      setAuth(true); 
+    }
   }
+  React.useEffect(()=>{
+    readCookie();
+  },[])
 
-  render() {
-    return (
-      <>
+  return (
+    <div>
+      <AuthApi.Provider value ={{auth,setAuth}}>
+
         <Navbar/>
-        <header className="app-header">
-          <RoutesContainer />
-        </header>
+        <RoutesView />
         {/* <Footer /> */}
-      </>
-    );
-  }
+
+      </AuthApi.Provider>
+    </div>
+  )
 }
 
-export default App;
+// class App extends Component {
+//   constructor() {
+//     super();
+//     this.state = {};
+//   }
+
+//   render() {
+//     return (
+//       <>
+            
+
+//       </>
+//     );
+//   }
+// }
+
+// export default App;

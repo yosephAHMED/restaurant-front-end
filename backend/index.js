@@ -120,6 +120,7 @@ app.post('/newemployee', async (req,res) =>{
 
 //PUT request to update
 
+//updates order from pending to complete
 app.put('/orders/:id', async (req, res) => {
     
     try{
@@ -129,7 +130,6 @@ app.put('/orders/:id', async (req, res) => {
         console.log(status)
 
         const updateOrder = await pool.query(`Update orders SET status = true where orderid = ${id}`);
-        // const updateOrder2 = await pool.query(`Select * from orders where orderid = ${id}`);
 
         res.json(updateOrder);
     }catch(err){

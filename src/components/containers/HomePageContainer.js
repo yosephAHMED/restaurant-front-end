@@ -1,32 +1,70 @@
-import React, { Component } from "react";
+import React, { Component, useContext } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HomePageView } from "../views";
 import { Hero, Banner} from "../functionComponents";
+import AuthApi from "../../app/AuthApi";
 
-class HomePageContainer extends Component {
-  componentDidMount() {
-    // do something
-  }
+// class HomePageContainer extends Component {
 
-  render() {
-    return (
-      <>
+//   constructor(props){
+//     super(props);
+
+//     this.state = {
+//       msg: ''
+//     }
+//   }
+//   componentDidMount() {
+//     // do something
+//     this.setState({msg: useContext(AuthApi)})
+
+//   }
+
+//   render() {
+//     const {msg} = this.state;
+//     return (
+//       <>
+//         <Hero>
+//           <Banner
+//             title="delish dream dish"
+//             subtitle="join us for lunch & dinner"
+//           >
+//             <Link to="/menu" className="btn-primary">
+//               {msg}
+//             </Link>
+//           </Banner>
+//         </Hero>
+//         <HomePageView />
+//       </>
+//     );
+//   }
+// }
+
+// export default HomePageContainer;
+// import React from 'react'
+
+export default function HomePageContainer() {
+
+  return (
+    <div>
         <Hero>
-          <Banner
-            title="delish dream dish"
-            subtitle="join us for lunch & dinner"
-          >
-            <Link to="/menu" className="btn-primary">
-              View Our Menu
+           <Banner
+              title="delish dream dish"
+              subtitle="join us for lunch & dinner"
+            >
+            <Link to="/menu" className="btn-primary"> 
+              This is a link
             </Link>
-          </Banner>
-        </Hero>
-        <HomePageView />
-      </>
-    );
-  }
+            </Banner>
+          </Hero>
+    </div>
+  )
 }
 
-export default HomePageContainer;
+
+
+
+
+
+
