@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import axios from "axios";
 import Pending from "./LoginPageComponents/Pending.jsx"
 import Completed from "./LoginPageComponents/Completed.jsx"
 import Customer from './LoginPageComponents/Customer.jsx';
 import {useSelector, useDispatch, connect} from 'react-redux';
+import AuthApi from '../../app/AuthApi.js';
+import Cookies from 'js-cookie';
 // import { logStatus } from '../../app/actions/index.js';
 
 
     
 class LoginPageContainer extends Component {
+
+    static contextType = AuthApi
 
     constructor(props){
         super(props);
@@ -21,7 +25,14 @@ class LoginPageContainer extends Component {
     }
 
     componentDidMount(){
+
         
+    }
+    login2 = () =>{
+        const auth = this.context;
+        
+        auth.setAuth(true);
+        Cookies.set('user', 'loginTrue')
     }
 
     login = () => {
@@ -50,35 +61,27 @@ class LoginPageContainer extends Component {
 
     }
 
-    // reloadget = () =>{
-
-    //     this.setState({arr:[],arr2:[]},()=>{
-    //         this.getOrders();
-    //         console.log("Componetttt")
-    //     })
-
-    // }
-
     render() {
         const {arr, arr2} = this.state;
 
         return (
             <>  
             {   
-                !this.props.logged ?
+                // !this.props.logged ?
 
                 <div>
                     <Customer login={this.login}/>
-                    <button> Sign Up </button>
+                    <button onClick={this.login2}> Sign Up </button>
+
                 </div>
             
-                :
+                //:
                
-                <div>
-                    <Pending title='Pending Orders' map={arr} getorder={this.getOrders}/>
-                    <Completed title='Completed Orders' map={arr2} getorder={this.getOrders}/>
-                    <button onClick={() => this.props.logStatus}>Log Out</button>
-                </div>
+                // <div>
+                //     <Pending title='Pending Orders' map={arr} getorder={this.getOrders}/>
+                //     <Completed title='Completed Orders' map={arr2} getorder={this.getOrders}/>
+                //     <button onClick={() => this.props.logStatus}>Log Out</button>
+                // </div>
             }
 
             </>
@@ -99,4 +102,3 @@ function mapStateToProps(state) {
 //   }
 
 export default connect(mapStateToProps)(LoginPageContainer);
-// export default (LoginPageContainer);
