@@ -17,8 +17,8 @@ export default function Customer(props) {
         console.log(logged);
         dispatch(logStatus());
         console.log(user);
-        let url ='http://localhost:3001/employees';
-        axios.post(url, { managerid: Number(user), password: pass}).then(res=>{
+        let url ='http://localhost:3001/user';
+        axios.post(url, { username: user, password: pass}).then(res=>{
             if(res.data.length === 1){
                 props.login();
             }

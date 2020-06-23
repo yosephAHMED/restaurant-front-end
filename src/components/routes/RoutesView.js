@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState}from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import {
   HomePageContainer,
@@ -14,6 +14,10 @@ import AuthApi from "../../app/AuthApi"
 const RoutesView = () => {
 
     const Auth = React.useContext(AuthApi);
+    const [customerState, setCustomer] = useState(false);
+    const valid = customerState
+    const [employeeState, setEmployee] = useState(false);
+
     console.log(Auth.auth);
     return (
         <Switch>
@@ -27,7 +31,7 @@ const RoutesView = () => {
             {/**Setting up the order page route */}
             <Route exact path="/order" component={OrderPageContainer} />
             {/**Setting up the error page route */}
-            <ProtectedLogin exact path="/login" auth={Auth.auth} component={LoginPageContainer} />
+            <ProtectedLogin exact path="/login" c={valid} ca={valid} e={setEmployee} auth={Auth.auth} component={LoginPageContainer} />
             <ProtectedRoute exact path="/employee" auth={Auth.auth} component={EmployeeLoginContainer} />
             {/**Setting up the error page route */}
             {/* <Route component={ErrorPageContainer} /> */}

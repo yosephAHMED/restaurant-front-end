@@ -88,7 +88,7 @@ export default function Display(props) {
                 <ExpansionPanel square expanded={expanded === k} onChange={handleChange(k)}>
                     <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header">
                             
-                        <ul className= 'emul' style={{display:'flex'}}>
+                        <ul key ={k} className= 'emul' style={{display:'flex'}}>
                             <li>{val.orderid}</li> <li>{val.username}</li> <li>{val.price}</li>
                         </ul>
 
@@ -97,7 +97,10 @@ export default function Display(props) {
                     <ExpansionPanelDetails>
 
                         <Typography>
-                            {val.orderitems}
+                            {val.orderitems.map((o,v)=>(
+                              <p key={v}>{o.fooditem}</p>
+                            ))
+                            }
                         </Typography>
 
                         {props.but ? <button onClick={(event)=>completed(val.orderid)}style={{position:'absolute', right:'10%'}}> Finish </button> : ''}
