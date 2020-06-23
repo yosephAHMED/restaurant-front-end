@@ -18,7 +18,7 @@ class OrderPageContainer extends Component {
       dessertsArr: [],
       drinksArr: [],
       order: [],
-      tttt: false
+      lhsDisplay: true,
     };
   }
 
@@ -76,7 +76,7 @@ class OrderPageContainer extends Component {
   }
 
   render() {
-    const { appetizersArr, entreesArr, dessertsArr, drinksArr, order,tttt } = this.state;
+    const { appetizersArr, entreesArr, dessertsArr, drinksArr, order, lhsDisplay } = this.state;
     return (
       <>
         <Hero hero="orderHero">
@@ -95,7 +95,7 @@ class OrderPageContainer extends Component {
                 <span className="menu-section-container-name"> APPETIZERS AND SALADS </span>
               </div>
               <div className="menu-sub-section">              
-                <Map map={appetizersArr} title="appetizer" unneeded={!tttt} order={this.handleClick}/>
+                <Map map={appetizersArr} title="appetizer" lhsDisplay={lhsDisplay} order={this.handleClick}/>
               </div>
 
             {/* ENTREES SECTION */}
@@ -103,7 +103,7 @@ class OrderPageContainer extends Component {
                 <span className="menu-section-container-name">ENTREES</span>
               </div>
               <div className="menu-sub-section">
-                <Map map={entreesArr} title="entrees" unneeded={!tttt} order={this.handleClick}/>
+                <Map map={entreesArr} title="entrees" lhsDisplay={lhsDisplay} order={this.handleClick}/>
               </div>
 
             {/* DESSERTS SECTION */}
@@ -111,7 +111,7 @@ class OrderPageContainer extends Component {
                 <span className="menu-section-container-name">DESSERTS</span>
               </div>
               <div className="menu-sub-section">
-                <Map map={dessertsArr} title="desserts" unneeded={!tttt} order={this.handleClick}/>
+                <Map map={dessertsArr} title="desserts" lhsDisplay={lhsDisplay} order={this.handleClick}/>
               </div>
 
             {/* DRINKS SECTION */}
@@ -119,7 +119,7 @@ class OrderPageContainer extends Component {
                 <span className="menu-section-container-name">DRINKS</span>
               </div>
               <div className="menu-sub-section">
-                <Map map={drinksArr} title="drinks" unneeded={!tttt} order={this.handleClick}/>
+                <Map map={drinksArr} title="drinks" lhsDisplay={lhsDisplay} order={this.handleClick}/>
               </div>
 
           </div>
@@ -130,7 +130,7 @@ class OrderPageContainer extends Component {
               <div className="order-main-container-rhs-center-title">ORDER</div>
               <div className="order-main-container-rhs-center-order-list">
                 {/* <Cart /> */}
-                <Map map={order} title="Orders" unneeded={tttt}/>
+                <Map map={order} title="Orders" lhsDisplay={!lhsDisplay}/>
 
               </div>
             </div>
