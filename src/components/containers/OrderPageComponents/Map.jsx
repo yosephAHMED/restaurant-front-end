@@ -31,20 +31,20 @@ export default function Map(props) {
           <div className="menu-sub-section-item-price">${food.foodprice}</div>
           <div className="menu-sub-section-item-description">
             {food.fooddescription}
+            <button className="add-to-cart-btn" onClick={(event) => add({ food })}>Add to Cart</button>
           </div>
-          <button onClick={(event) => add({ food })}>Add to Cart</button>
         </div>
       ))}
     </div>
-  ) : (
+  ) : (props.orderIn ? (
     <div>
       {props.mapp.map((food, item) => (
         <div>
           {food.fooditem}&nbsp;
           <p style={{display: "inline"}}>${food.foodprice}</p>
-          <button onClick={(event)=> sub({item})}>Remove</button>
+          <button className="remove-from-cart-btn" onClick={(event)=> sub({item})}>Remove</button>
         </div>
       ))}
     </div>
-  );
+  ) : (<div>No items yet</div>))
 }

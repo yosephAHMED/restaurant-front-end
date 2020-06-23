@@ -4,64 +4,63 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { HomePageView } from "../views";
 import { Hero, Banner} from "../functionComponents";
-import AuthApi from "../../app/AuthApi";
+// import AuthApi from "../../app/AuthApi";
 
-// class HomePageContainer extends Component {
+class HomePageContainer extends Component {
 
-//   constructor(props){
-//     super(props);
+  constructor(props){
+    super(props);
 
-//     this.state = {
-//       msg: ''
-//     }
-//   }
-//   componentDidMount() {
-//     // do something
-//     this.setState({msg: useContext(AuthApi)})
+    this.state = {
+      // msg: ''
+    }
+  }
+  componentDidMount() {
+    // do something
+    // this.setState({msg: useContext(AuthApi)})
+    window.scrollTo(0, 0);
+  }
 
-//   }
-
-//   render() {
-//     const {msg} = this.state;
-//     return (
-//       <>
-//         <Hero>
-//           <Banner
-//             title="delish dream dish"
-//             subtitle="join us for lunch & dinner"
-//           >
-//             <Link to="/menu" className="btn-primary">
-//               {msg}
-//             </Link>
-//           </Banner>
-//         </Hero>
-//         <HomePageView />
-//       </>
-//     );
-//   }
-// }
-
-// export default HomePageContainer;
-// import React from 'react'
-
-export default function HomePageContainer() {
-
-  return (
-    <div>
+  render() {
+    const {msg} = this.state;
+    return (
+      <>
         <Hero>
-           <Banner
-              title="delish dream dish"
-              subtitle="join us for lunch & dinner"
-            >
+          <Banner
+            title="delish dream dish"
+            subtitle="join us for lunch & dinner"
+          >
             <Link to="/menu" className="btn-primary"> 
               View Our Menu
             </Link>
-            </Banner>
-          </Hero>
-          <HomePageView />
-    </div>
-  )
+          </Banner>
+        </Hero>
+        <HomePageView />
+      </>
+    );
+  }
 }
+
+export default HomePageContainer;
+
+// export default function HomePageContainer() {
+
+//   return (
+//     <div>
+//         <Hero>
+//            <Banner
+//               title="delish dream dish"
+//               subtitle="join us for lunch & dinner"
+//             >
+            // <Link to="/menu" className="btn-primary"> 
+            //   View Our Menu
+            // </Link>
+//             </Banner>
+//           </Hero>
+//           <HomePageView />
+//     </div>
+//   )
+// }
 
 
 
